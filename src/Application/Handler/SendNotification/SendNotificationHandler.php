@@ -25,7 +25,7 @@ final class SendNotificationHandler
             default => NotificationChannels::Email,
         };
 
-        $recipient = RecipientFactory::createRecipient($channel, $message->to);
+        $recipient = RecipientFactory::createRecipient($channel, (string)$message->to);
         $notification = NotificationFactory::createNotification($channel, $message->message);
 
         $this->notifier->send($notification, $recipient);
