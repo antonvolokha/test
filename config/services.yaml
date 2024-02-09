@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\:
+    resource: '../src/'
+    exclude:
+      - '../src/Kernel.php'
+      - '../src/Domain/{Entity,Event,Exception}/'
+      - '../src/Infrastructure/Persistence/{Migration}/'
+
+  Symfony\Component\Notifier\NotifierInterface:
+    class: App\Infrastructure\Adapter\MockNotifierAdapter
