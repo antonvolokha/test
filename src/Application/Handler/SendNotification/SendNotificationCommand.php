@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\Handler\SendNotification;
 
 use Symfony\Component\Validator\Constraints as Assert;
