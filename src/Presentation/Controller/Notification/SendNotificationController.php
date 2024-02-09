@@ -1,18 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Presentation\Controller\Notification;
 
 use App\Application\Attribute\MapMessage;
-use App\Application\Handler\ApplyAccountAction\ApplyAccountActionCommand;
 use App\Application\Handler\SendNotification\SendNotificationCommand;
 use App\Presentation\Controller\AbstractController;
+use OpenApi\Attributes as OA;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use OpenApi\Attributes as OA;
 
 #[AsController]
 class SendNotificationController extends AbstractController
