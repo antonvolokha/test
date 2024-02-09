@@ -42,13 +42,7 @@ $ docker-compose --env-file .env.local up -d [--no-deps] [containers]
 Main application containers list.
 
 ```
-application crontab messenger migration
-```
-
-Use the following command when you need some data in the local database.
-
-```
-$ composer load-fixtures
+application
 ```
 
 The xdebug extension is already included in the project and is activated for development environment.
