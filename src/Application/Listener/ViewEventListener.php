@@ -32,7 +32,6 @@ final class ViewEventListener
             $handledStamp = $controllerResult->last(stampFqcn: HandledStamp::class);
             $responseStamp = $controllerResult->last(stampFqcn: ResponseStamp::class);
             $serializerStamp = $controllerResult->last(stampFqcn: SerializerStamp::class);
-            $templateStamp = $controllerResult->last(stampFqcn: TemplateStamp::class);
 
             $format = $event->getRequest()->getPreferredFormat(default: JsonEncoder::FORMAT) ?? '';
             $status = $responseStamp instanceof ResponseStamp ? $responseStamp->getCode() : null;
@@ -41,10 +40,6 @@ final class ViewEventListener
             $result = $handledStamp instanceof HandledStamp ? $handledStamp->getResult() : '';
 
             $context[JsonEncode::OPTIONS] = JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT;
-
-            if ($templateStamp instanceof TemplateStamp) {
-                $context[HtmlTemplateEncoder::TEMPLATE] = $templateStamp->getTemplate();
-            }
 
             if (is_countable($result) && !is_array($result)) {
                 $headers['X-Total-Count'] = count($result);

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Application\Listener;
 
-use App\Domain\Contract\PrivacyProtectorInterface;
 use Psr\Log\LoggerInterface;
 use ReflectionClass;
 use ReflectionException;

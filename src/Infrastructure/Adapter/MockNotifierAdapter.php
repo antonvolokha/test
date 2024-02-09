@@ -2,6 +2,7 @@
 
 namespace App\Infrastructure\Adapter;
 
+use Override;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Notifier\Notification\Notification;
 use Symfony\Component\Notifier\NotifierInterface;
@@ -14,7 +15,7 @@ readonly class MockNotifierAdapter implements NotifierInterface
     ) {
     }
 
-    #[\Override]
+    #[Override]
     public function send(Notification $notification, RecipientInterface ...$recipients): void
     {
         $this->logger->info('Message sent');
