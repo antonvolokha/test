@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Tests;
 
-use App\Domain\Entity\HealthStatus;
 use App\Domain\Entity\NotificationChannels;
 use Codeception\Util\HttpCode;
 
